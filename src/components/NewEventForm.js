@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './NewEventForm.css'
 
-const NewEventForm = () => {
+const NewEventForm = ({ addEvent }) => {
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
 
@@ -24,6 +24,7 @@ const NewEventForm = () => {
     }
 
     console.log(event)
+    addEvent(event)
     resetForm()
   }
 

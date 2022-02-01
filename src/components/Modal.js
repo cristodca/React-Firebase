@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import './modal.css'
 
-const Modal = ({ children, handleClose, isSalesModal }) => {
+const Modal = ({ children, isSalesModal }) => {
 	return ReactDOM.createPortal((
 		<div className="modal-backdrop">
 			<div className="modal" style={{
@@ -10,10 +10,6 @@ const Modal = ({ children, handleClose, isSalesModal }) => {
 				textAlign: 'center'
 			}}>
 				{ children }
-				<button 
-					onClick={handleClose} 
-					className={isSalesModal ? 'sales-btn' : ''}
-				>close</button>
 			</div>
 		</div>
 	), document.body);
