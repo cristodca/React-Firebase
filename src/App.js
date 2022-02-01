@@ -5,6 +5,7 @@ import './App.css'
 import Title from './components/Title'
 import Modal from './components/Modal'
 import EventList from './components/EventList'
+import NewEventForm from './components/NewEventForm'
 
 // React component
 function App() {
@@ -64,15 +65,12 @@ function App() {
       </Modal> */}
       {
         !showModal && 
-        <button onClick={() => setShowModal(true)}>show modal</button>
+        <button onClick={() => setShowModal(true)}>Add New Event</button>
       }
       {
         showModal && 
         <Modal handleClose={handleModalClose} isSalesModal={true}>
-          <h2>Terms & Conditions</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod aspernatur, quo non rem possimus voluptate, quia, iste ipsum ab labore quaerat libero tempora quibusdam in aut. Pariatur corporis consequatur nemo!
-          </p>
+          <NewEventForm />
         </Modal>
       }
     </div>
